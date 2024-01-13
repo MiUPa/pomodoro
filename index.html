@@ -3,16 +3,16 @@
 <head>
     <link rel="stylesheet" href="stylesheet.css">
 <meta charset="UTF-8">
-<title>インターバルタイマー</title>
+<title>無限集中タイマー</title>
 <script>
 
-function showNotification() {
-  const date = new Date();
-  const notification = new Notification(date.getHours() + "時" + date.getMinutes() + "分", {
-      body:  "1時間座り続けると余命が22分縮まる" ,　//なんか他に表示したいものがあれb
-      icon: "bird_shiro_hato.png" // 通知に表示したいアイコンがあれば
-  });
-}
+<!--function showNotification() {-->
+<!--  const date = new Date();-->
+<!--  const notification = new Notification(date.getHours() + "時" + date.getMinutes() + "分", {-->
+<!--      body:  "1時間座り続けると余命が22分縮まる" ,　//なんか他に表示したいものがあれb-->
+<!--      icon: "bird_shiro_hato.png" // 通知に表示したいアイコンがあれば-->
+<!--  });-->
+<!--}-->
 // 通知の許可確認
 function askNotificationPermission() {
   // ブラウザが通知をサポートしているか確認
@@ -32,26 +32,69 @@ function askNotificationPermission() {
   }
 }
 
-// 1時間ごとに通知を表示するように設定
-setInterval(() => {
-  if (Notification.permission === "granted") {
-    showNotification();
-  }
-}, 3600000);
+<!--// 1時間ごとに通知を表示するように設定-->
+<!--setInterval(() => {-->
+<!--  if (Notification.permission === "granted") {-->
+<!--    showNotification();-->
+<!--  }-->
+<!--}, 3600000);-->
 
-showNotification()
 // ページ読み込み時に通知の許可を求める
 // document.addEventListener('DOMContentLoaded', askNotificationPermission);
 </script>
-    <link rel="shortcut icon" href="bird_shiro_hato.png" />
+    <link rel="shortcut icon" href="tomato_red.png" />
 </head>
 <body>
 <div class="wrapper">
 
-    <p><img src="bird_shiro_hato.png" ></p>
-    <h1>ブラウザ鳩時計</h1>
-    <p>このアプリは1時間ごとにデスクトップ通知を行います。</p>
+    <p><img src="tomato_red.png" ></p>
+    <h1>無限集中タイマー</h1>
     <p>※本サイトはPCのみ対応しています。</p>
+    <p>
+    <label for="work">作業時間を選択してください</label>
+    <select id="work">
+        <option value=5>5</option>
+        <option value=10>10</option>
+        <option value=15>15</option>
+        <option value=20>20</option>
+        <option value=25>25</option>
+        <option value=30>30</option>
+        <option value=35>35</option>
+        <option value=40>40</option>
+        <option value=45>45</option>
+        <option value=50>50</option>
+        <option value=55>55</option>
+        <option value=60>60</option>
+    </select>
+    </p>
+    <p>
+    <label for="rest">休憩時間を選択してください</label>
+    <select id="rest">
+        <option value=5>5</option>
+        <option value=10>10</option>
+        <option value=15>15</option>
+        <option value=20>20</option>
+        <option value=25>25</option>
+        <option value=30>30</option>
+        <option value=35>35</option>
+        <option value=40>40</option>
+        <option value=45>45</option>
+        <option value=50>50</option>
+        <option value=55>55</option>
+        <option value=60>60</option>
+    </select>
+    </p>
+    <p>
+    <label for="repeat">繰り返し回数を選択してください</label>
+    <select id="repeat">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value='endless'>endless</option>
+    </select>
+    </p>
 </div>
 </body>
 </html>
